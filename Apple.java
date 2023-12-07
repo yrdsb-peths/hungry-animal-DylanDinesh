@@ -19,9 +19,22 @@ public class Apple extends Actor
         MyWorld world = (MyWorld) getWorld();
         if (getY() >= world.getHeight())
         {
-            world.gameOver();
+            world = (MyWorld) getWorld();
             world.removeObject(this);
+            Elephant.lives--;
+            if (Elephant.lives > 0)
+            {
+                world.spawnApple();
+            }
         }
+
+        if (Elephant.lives == 0)
+        {
+            world.removeObject(this);
+            world.gameOver();
+            world = (MyWorld) getWorld();
+        }
+
     }
 
     public void setSpeed(int spd)

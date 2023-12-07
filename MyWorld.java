@@ -11,6 +11,7 @@ public class MyWorld extends World
     public int score = 0;
     Label scoreLabel;
     int level = 1;
+    private boolean isPaused = false;
 
     /**
      * Constructor for objects of class MyWorld.

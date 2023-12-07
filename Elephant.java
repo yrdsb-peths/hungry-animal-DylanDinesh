@@ -21,8 +21,13 @@ public class Elephant extends Actor
     /**
      *  Constructor - The code that gets run one time when object is created.
      */
+
+    // Integer for lives or "chances" the elephants has
+    public static int lives = 3;
+
     public Elephant()
     {
+        lives = 3;
         for (int i = 0; i < idleRight.length; i++)
         {
             idleRight[i] = new GreenfootImage("images/elephant_idle/idle" + i + ".png");
@@ -65,6 +70,11 @@ public class Elephant extends Actor
         }
     }
 
+    public static int getLives()
+    {
+        return lives;
+    }
+
     public void act()
     {
         // Add your action code here.
@@ -78,7 +88,6 @@ public class Elephant extends Actor
             move(2);
             facing = "right";
         }
-
         // Remove apple if elephant eats it
         eat();
 
