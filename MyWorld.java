@@ -1,17 +1,17 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * The World our here lives in. 
+ * The World our Elephant lives in and where the game takes place. 
  * 
  * @author Dylan Dinesh 
- * @version November 2023
+ * @version Dec 2023
  */
 public class MyWorld extends World
 {
     public int score = 0;
     Label scoreLabel;
+    Label livesLabel;
     int level = 1;
-    private boolean isPaused = false;
 
     /**
      * Constructor for objects of class MyWorld.
@@ -26,9 +26,13 @@ public class MyWorld extends World
         Elephant elephant = new Elephant();
         addObject(elephant, 300, 200);
 
-        //Creates a label
+        //Creates a label for score
         scoreLabel = new Label(0, 80);
-        addObject(scoreLabel, 50, 50);
+        addObject(scoreLabel, 50, 35);
+
+        // Creates a label for the number of lives the elephant has left
+        livesLabel = new Label("Lives: " + Elephant.lives, 60);
+        addObject(livesLabel, 485, 35);
 
         spawnApple();
     }
@@ -40,6 +44,14 @@ public class MyWorld extends World
     {
         Label gameOverLabel = new Label("Game Over", 100);
         addObject(gameOverLabel, 300, 200);
+    }
+
+    /**
+     * Decrease the lives label
+     */
+    public void decreaseLives()
+    {
+        livesLabel.setValue("Lives: " + Elephant.lives);
     }
 
     /**

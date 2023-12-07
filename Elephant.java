@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Elephant here.
+ * Elephant class. The elephant is the main player of this game.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Dylan Dinesh
+ * @version Dec 2023
  */
 
 public class Elephant extends Actor
@@ -22,7 +22,7 @@ public class Elephant extends Actor
      *  Constructor - The code that gets run one time when object is created.
      */
 
-    // Integer for lives or "chances" the elephants has
+    // int value for lives or chances the elephants has of letting the apple fall to the group before the game over screen.
     public static int lives = 3;
 
     public Elephant()
@@ -68,11 +68,6 @@ public class Elephant extends Actor
             setImage(idleLeft[imageIndex]);
             imageIndex = (imageIndex + 1) % idleLeft.length;
         }
-    }
-
-    public static int getLives()
-    {
-        return lives;
     }
 
     public void act()
