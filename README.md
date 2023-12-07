@@ -15,4 +15,6 @@ This particular repository is the starting template for the Hungry Elephant tuto
 
 
 
-The features of this game added by myself include: Adding 3 lives for the elephant before the game ends, and a lives counter in the top right. 
+The features of this game added by myself include: Adding 3 lives for the elephant before the game ends, and a lives left counter in the top right. 
+
+These feauters go hand in hand with the parts of the game, such as the point counter, and the increasingly hard difficulty of the game.
