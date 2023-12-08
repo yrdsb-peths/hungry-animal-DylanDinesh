@@ -8,8 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MyWorld extends World
 {
-    private int friesEatenCount = 0;
-    private boolean gameOver = false;
+    private int applesEatenCount = 0;
+    private boolean gameIsOver = false;
     public int score = 0;
     Label scoreLabel;
     Label livesLabel;
@@ -38,9 +38,9 @@ public class MyWorld extends World
 
         spawnApple();
     }
-    
+
     public void act() {
-        if (Greenfoot.isKeyDown("space")) {
+        if (Greenfoot.isKeyDown("space") && gameIsOver) {
             Greenfoot.setWorld(new MyWorld());
         }
     }
@@ -53,10 +53,12 @@ public class MyWorld extends World
     {
         Label gameOverLabel = new Label("Game Over", 50);
         addObject(gameOverLabel, getWidth() / 2, getHeight() / 2);
-        
+
         Label scoreMessageLabel = new Label("Score: " + score + "\nPress space to start again", 30);
         addObject(scoreMessageLabel, getWidth() / 2, getHeight() / 2 + 50);
-        
+
+        gameIsOver = true;
+
     }
 
     /**
