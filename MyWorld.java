@@ -8,6 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MyWorld extends World
 {
+    private int friesEatenCount = 0;
+    private boolean gameOver = false;
     public int score = 0;
     Label scoreLabel;
     Label livesLabel;
@@ -36,14 +38,25 @@ public class MyWorld extends World
 
         spawnApple();
     }
+    
+    public void act() {
+        if (Greenfoot.isKeyDown("space")) {
+            Greenfoot.setWorld(new MyWorld());
+        }
+    }
 
     /**
      * End the game and draw 'GameOver'
+     * shows score & let's them start again when they press start (even during the game if they give up, they can press space to start again)
      */
     public void gameOver()
     {
-        Label gameOverLabel = new Label("Game Over", 100);
-        addObject(gameOverLabel, 300, 200);
+        Label gameOverLabel = new Label("Game Over", 50);
+        addObject(gameOverLabel, getWidth() / 2, getHeight() / 2);
+        
+        Label scoreMessageLabel = new Label("Score: " + score + "\nPress space to start again", 30);
+        addObject(scoreMessageLabel, getWidth() / 2, getHeight() / 2 + 50);
+        
     }
 
     /**
