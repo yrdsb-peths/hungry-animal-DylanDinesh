@@ -48,5 +48,6 @@ public class TitleScreen extends World
         addObject(label2,200,303);
         Elephant elephant = new Elephant();
         addObject(elephant,505,59);
+        label.setLocation(201,344);
     }
 }
