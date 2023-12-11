@@ -14,7 +14,7 @@ This particular repository is the starting template for the Hungry Elephant tuto
 [Part 3: Final Touches](https://youtu.be/GT-eFwa4Abc)
 
 
-
+## Features
 The features of this game added by myself include: Adding 3 lives for the elephant before the game ends, and a lives left counter in the top right. The total points per round shown at end screen. Also, after "game over" you can click the space bar to restart the game!
 
 These feauters go hand in hand with the parts of the game, such as the point counter, and the increasingly hard difficulty of the game.
